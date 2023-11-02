@@ -24,7 +24,7 @@ terraform {
 
 variable "prefix" {
     type = string
-    default = "aci"
+    default = "sm-hcv"
 }
 
 variable "location" {
@@ -37,6 +37,8 @@ variable "location" {
 ##########################################################################
 
 provider "azurerm" {
+  subscription_id = var.subscriptionID
+  tenant_id = var.tenantID
   features {}
 }
 
