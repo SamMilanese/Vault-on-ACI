@@ -24,7 +24,7 @@ terraform {
 
 variable "prefix" {
     type = string
-    default = "smHCV"
+    default = "smhcv"
 }
 
 variable "location" {
