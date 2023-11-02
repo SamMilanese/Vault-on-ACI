@@ -80,7 +80,7 @@ resource "tls_private_key" "private" {
 }
 
 resource "tls_self_signed_cert" "cert" {
-  key_algorithm   = tls_private_key.private.algorithm
+ 
   private_key_pem = tls_private_key.private.private_key_pem
 
   validity_period_hours = 87600
