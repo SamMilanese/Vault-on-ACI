@@ -211,6 +211,7 @@ resource "azurerm_key_vault_key" "vault-key" {
 # Command to create container instance
 
 output "container_create" {
+    sensitive = true
     value = <<EOF
 az container create --resource-group ${azurerm_resource_group.vault.name} \
   --name ${local.vault_name} --image vault:latest \
@@ -230,6 +231,7 @@ EOF
 # Environment variables to set
 
 output "environment_variables" {
+    sensitive = true
     value = <<EOF
 export VAULT_ADDR="https://${local.vault_name}.${var.location}.azurecontainer.io:8200"
 export VAULT_SKIP_VERIFY=true
@@ -237,9 +239,11 @@ EOF
 }
 
 output "storage_accountName" {
+    sensitive = true
     value = local.storage_account_name
 }
 
 output "container_delete" {
+    sensitive = true
     value = "az container delete --resource-group ${azurerm_resource_group.vault.name} --name ${local.vault_name}"
 }
