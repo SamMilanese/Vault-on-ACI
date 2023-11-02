@@ -212,7 +212,7 @@ resource "azurerm_key_vault_key" "vault-key" {
 output "container_create" {
     value = <<EOF
 az container create --resource-group ${azurerm_resource_group.vault.name} \
-  --name ${local.vault_name} --image vault:1.5.3 \
+  --name ${local.vault_name} --image vault:latest \
   --command-line 'vault server -config /vault/vault-config.hcl' \
   --dns-name-label ${local.vault_name} --ports 8200 \
   --azure-file-volume-account-name ${local.storage_account_name} \
