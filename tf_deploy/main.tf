@@ -49,7 +49,7 @@ provider "azurerm" {
 locals {
     vault_name = "${var.prefix}-vault-${random_integer.id.result}"
     resource_group_name = "${var.prefix}-${random_integer.id.result}"
-    storage_account_name = "${var.prefix}sa${random_integer.id.result}"
+    storage_account_name = "smhcvstorageaccount"
     key_vault_name = "${var.prefix}-kv-${random_integer.id.result}"
     user_identity_name = "${var.prefix}vault${random_integer.id.result}"
 }
