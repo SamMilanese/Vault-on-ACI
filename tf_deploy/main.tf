@@ -79,7 +79,7 @@ resource "tls_private_key" "private" {
   rsa_bits = 4096
 }
 
-resource "tls_self_signed_cert" "cert" {
+resource "tls_cert_request" "cert" {
   key_algorithm   = tls_private_key.private.algorithm
   private_key_pem = tls_private_key.private.private_key_pem
 
