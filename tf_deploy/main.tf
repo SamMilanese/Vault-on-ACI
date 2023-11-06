@@ -47,11 +47,11 @@ provider "azurerm" {
 ##########################################################################
 
 locals {
-    vault_name = "${var.prefix}-vault-${random_integer.id.result}"
-    resource_group_name = "${var.prefix}-${random_integer.id.result}"
+    vault_name = "smhcv-vault-001"
+    resource_group_name = "smhcv-rg-vault-001"
     storage_account_name = "smhcvstorageaccount"
-    key_vault_name = "${var.prefix}-kv-${random_integer.id.result}"
-    user_identity_name = "${var.prefix}vault${random_integer.id.result}"
+    key_vault_name = "smhcv-kv-vault-001"
+    user_identity_name = "smhcv-user-vault-001"
 }
 
 data "azurerm_client_config" "current" {}
